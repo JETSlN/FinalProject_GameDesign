@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Code origin from Brackeys First person FPS Controller
+// Modified to use mobile joysticks instead of mouse
 public class MouseLook : MonoBehaviour
 {
     public float sensitivity = 100f;
