@@ -7,8 +7,7 @@ using UnityEngine;
 // Modified to use mobile joysticks instead of mouse
 public class MouseLook : MonoBehaviour
 {
-    public float sensitivity = 100f;
-    public FixedJoystick fixedJoystick;
+    public float sensitivity;
 
     public Transform player;
     float xRotation = 0f;
@@ -17,13 +16,18 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float joystickX = fixedJoystick.Horizontal * sensitivity * Time.deltaTime;
-        float joystickY = fixedJoystick.Vertical * sensitivity * Time.deltaTime;
+        if (Input.touchCount > 0) {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved) {
+                float touchX = touch.deltaPosition.x * sensitivity;
+                float touchY = touch.deltaPosition.y * sensitivity;
 
-        xRotation -= joystickY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+                xRotation -= touchY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        player.Rotate(Vector3.up * joystickX);
+                transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+                player.Rotate(Vector3.up * touchX);
+            }
+        }
     }
 }
