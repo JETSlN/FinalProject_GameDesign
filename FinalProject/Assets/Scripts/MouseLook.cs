@@ -8,6 +8,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     public float sensitivity;
+    public float xBorder;
 
     public Transform player;
     float xRotation = 0f;
@@ -18,13 +19,13 @@ public class MouseLook : MonoBehaviour
     {
         if (Input.touchCount > 0) {
             Touch touchCheck = Input.GetTouch(0);
-            if (touchCheck.position.x > 800) {
+            if (touchCheck.position.x > xBorder) {
                 touchIndex = 0;
             } else {
                 touchIndex = Input.touchCount - 1;
             }
             Touch touch = Input.GetTouch(touchIndex);
-            if (touch.phase == TouchPhase.Moved && touch.position.x > 800) {
+            if (touch.phase == TouchPhase.Moved && touch.position.x > xBorder) {
                 float touchX = touch.deltaPosition.x * sensitivity;
                 float touchY = touch.deltaPosition.y * sensitivity;
 
