@@ -8,9 +8,11 @@ public class ItemPickup : MonoBehaviour
 
     void Pickup()
     {
-        InventoryManager.Instance.Add(Item);
-        InventoryManager.Instance.ListItems();
-        Destroy(gameObject);
+        if (InventoryManager.Instance.capacity < InventoryManager.Instance.maxCapacity) {
+            InventoryManager.Instance.Add(Item);
+            InventoryManager.Instance.ListItems();
+            Destroy(gameObject);
+        }
     }
 
     private void OnMouseDown()

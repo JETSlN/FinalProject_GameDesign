@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
 
     public Transform ItemContent;
     public GameObject InventoryItem;
+    public float capacity;
+    public float maxCapacity;
 
     private void Awake()
     {
@@ -42,5 +44,10 @@ public class InventoryManager : MonoBehaviour
             //itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
         }
+    }
+
+    void Update()
+    {
+        capacity = Items.Count;
     }
 }
