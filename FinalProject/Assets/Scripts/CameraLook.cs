@@ -5,7 +5,7 @@ using UnityEngine;
 
 // Code origin from Brackeys First person FPS Controller
 // Modified to use mobile joysticks instead of mouse
-public class MouseLook : MonoBehaviour
+public class CameraLook : MonoBehaviour
 {
     public float sensitivity;
     public float xBorder;
