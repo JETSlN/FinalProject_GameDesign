@@ -11,8 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public Rigidbody rb;
 
-    [SerializeField]
-    float speed = 12f;
+    float speed;
     public float gravity = -9.81f;
     [SerializeField]
     float jumpHeight = 3f;
@@ -26,11 +25,17 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
 
     [SerializeField]
-    float stamina = 100f;
+    float stamina = 50f;
     [SerializeField]
     float waitTime;
     [SerializeField]
     float staminaTimer = 0f;
+    [SerializeField]
+    float runSpeed;
+    [SerializeField]
+    float walkSpeed;
+    public StaminaBar bar;
+    bool runButtonPressed;
 
 
     // Update is called once per frame
@@ -41,6 +46,15 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+        }
+
+        // Check run boolean with if else statement
+        if (runButtonPressed && fixedJoystick.Vertical > 0.5 && stamina > 0) {
+            speed = runSpeed;
+            stamina -= 10f * Time.deltaTime;
+            staminaTimer = waitTime;
+        } else {
+            speed = walkSpeed;
         }
 
         float x = fixedJoystick.Horizontal;
@@ -56,11 +70,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        bar.UpdateStaminaBar(50, stamina);
         if (staminaTimer > 0) {
             staminaTimer -= Time.deltaTime;
         }
-        if (staminaTimer <= 0 && stamina < 100 && speed == 12f) {
-            stamina += 10f * Time.deltaTime;
+        if (staminaTimer <= 0 && stamina < 50 && speed == walkSpeed) {
+            stamina += 5f * Time.deltaTime;
         }
     }
 
@@ -71,15 +86,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void RunHeld() {
-        if (fixedJoystick.Vertical > 0.1f && isGrounded && stamina > 0)
-        {
-            speed = 25f;
-            stamina -= 0.5f * Time.deltaTime;
-            staminaTimer = waitTime;
+        if (stamina > 5f) {
+            // Only starts if stamina > 5
+            runButtonPressed = true;
         }
     }
 
     public void RunReleased() {
-        speed = 12f;
+        runButtonPressed = false;
     }
 }
