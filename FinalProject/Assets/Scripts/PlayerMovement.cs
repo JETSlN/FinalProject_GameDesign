@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     //public Rigidbody rb;
 
     float speed;
-    public float gravity = -9.81f;
+    public float gravity = -20f;
     [SerializeField]
     float jumpHeight = 3f;
 
@@ -37,6 +37,17 @@ public class PlayerMovement : MonoBehaviour
     public StaminaBar bar;
     bool runButtonPressed;
 
+    public Transform leftWallCheck;
+    public Transform rightWallCheck;
+    public LayerMask wallMask;
+    bool isRightWall;
+    bool isLeftWall;
+    [SerializeField]
+    float wallDistance = 0.4f;
+    [SerializeField]
+    float wallJumpForce;
+    public Transform camera;
+
     // Update is called once per frame
     void Update()
     {
@@ -48,10 +59,16 @@ public class PlayerMovement : MonoBehaviour
         */
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isRightWall = Physics.CheckSphere(rightWallCheck.position, wallDistance, wallMask);
+        isLeftWall = Physics.CheckSphere(leftWallCheck.position, wallDistance, wallMask);
 
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+        }
+
+        if (!isRightWall && !isLeftWall) {
+            gravity = -20f;
         }
 
         // Check run boolean with if else statement
@@ -59,8 +76,34 @@ public class PlayerMovement : MonoBehaviour
             speed = runSpeed;
             stamina -= 10f * Time.deltaTime;
             staminaTimer = waitTime;
+            if (isLeftWall && !isGrounded) {
+                stamina -= 10f * Time.deltaTime;
+                gravity = 0f;
+                velocity.y = Mathf.Clamp(gravity, 0, 0);
+                if (camera.transform.localEulerAngles.z == 0) {
+                    camera.transform.Rotate(0,0,-1);
+                }
+                if (camera.transform.localEulerAngles.z > 330) {
+                    camera.transform.Rotate(0,0,-1);
+                }
+            }
+            if (isRightWall && !isGrounded) {
+                stamina -= 10f * Time.deltaTime;
+                gravity = 0f; 
+                velocity.y = Mathf.Clamp(gravity, 0, 0);
+                if (camera.transform.localEulerAngles.z < 30) {
+                    camera.transform.Rotate(0,0,1);
+                }
+            }
         } else {
+            gravity = -20f;
             speed = walkSpeed;
+            if (camera.transform.localEulerAngles.z < 180 && camera.transform.localEulerAngles.z != 0) {
+                camera.transform.Rotate(0, 0, -1);
+            }
+            if (camera.transform.localEulerAngles.z > 180 && camera.transform.localEulerAngles.z != 0) {
+                camera.transform.Rotate(0, 0, 1);
+            }
         }
 
         float x = fixedJoystick.Horizontal;
@@ -84,82 +127,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    /*
-    private void WallRunInput() {
-        if (fixedJoystick.Horizontal > 0.5f && wallRight && runButtonPressed && stamina > 0) {
-            StartWallRun();
-        } 
-        if (fixedJoystick.Horizontal < -0.5f && wallLeft && runButtonPressed && stamina > 0) {
-            StartWallRun();
-        } 
-    }
-
-    private void StartWallRun() {
-        gravity = 0f;
-        isWallRunning = true;
-
-        if (velocity.magnitude <= maxWallSpeed) {
-            velocity.z = orientation.forward * wallForce * Time.deltaTime;
-
-            if (wallRight) {
-                velocity.x = orientation.right * wallForce / 5 * Time.deltaTime;
-                if (Mathf.Abs(wallCameraTilt) < maxCameraTilt) {
-                    wallCameraTilt += Time.deltaTime * maxCameraTilt * 2;
-                }
-            } else {
-                velocity.x = orientation.left * wallForce / 5 * Time.deltaTime;
-                if (Mathf.Abs(wallCameraTilt) < maxCameraTilt) {
-                    wallCameraTilt -= Time.deltaTime * maxCameraTilt * 2;
-                }
-            }
-        }
-    }
-
-    private void StopWallRun() {
-        gravity = -9.81f;
-        isWallRunning = false;
-
-        if (wallCameraTilt > 0) {
-            wallRunCameraTilt -= Time.deltaTime * maxCameraTilt * 2f;
-        }
-        if (wallCameraTilt < 0) {
-            wallRunCameraTilt -= Time.deltaTime * maxCameraTilt * 2f;
-        }
-    }
-
-    private void CheckForWall() {
-        wallRight = Physics.Raycast(transform.position, orientation.right, 1f, wallCheck);
-        wallLeft = Physics.Raycast(transform.position, orientation.left, 1f, wallCheck);
-
-        if (!wallLeft && !wallRight) {
-            StopWallRun();
-        }
-    }
-    */
-
     public void Jump() {
         if (isGrounded) {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
         /*
-        if (isWallRunning) {
-            if (wallLeft && fixedJoystick.Horizontal < 0.33f || wallRight && fixedJoystick.Horizontal > -0.33f) {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            }
-
-            if (wallRight || isWallLeft && fixedJoystick.Horizontal > 0.33f || fixedJoystick.Horizontal < -0.33f) {
-                velocity.y = Mathf.Sqrt(jumpHeight * 1f * gravity);
-            }
-
-            if (wallRight && fixedJoystick.Horizontal < -0.33f) {
-                velocity.x = Math.Sqrt(orientation.left * jumpHeight * 3.2f);
-            }
-
-            if (isWallLeft && fixedJoystick.Horizontal > 0.33f) {
-                velocity.x = Math.Sqrt(orientation.right * jumpHeight * 3.2f);
-            }
-
-            velocity.z = orientation.forward * jumpHeight;
+        if (isLeftWall && speed > walkSpeed && !isGrounded && stamina > 10) {
+            stamina -= 10f;
+            staminaTimer = waitTime;
+            velocity.x = Mathf.Sqrt(wallJumpForce);
+        }
+        if (isRightWall && speed > walkSpeed && !isGrounded && stamina > 10) {
+            stamina -= 10f;
+            staminaTimer = waitTime;
+            velocity.x = Mathf.Sqrt(-wallJumpForce);
         }
         */
     }
