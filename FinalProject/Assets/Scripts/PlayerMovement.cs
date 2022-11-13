@@ -116,14 +116,15 @@ public class PlayerMovement : MonoBehaviour
             isWallRunning = false;
         }
 
-        if (slidePressed && isGrounded && !runButtonPressed) {
+        if (slidePressed && isGrounded && !runButtonPressed && stamina > 0) {
             isSliding = true;
             speed = runSpeed;
             if (camera.position.y - gameObject.transform.position.y > -0.75) {
                 camera.Translate(new Vector3 (0, -0.25f, 0));
                 playerCapsule.Translate(new Vector3 (0, -0.25f, 0));
             }
-            stamina -= 5f * Time.deltaTime;
+            stamina -= 25f * Time.deltaTime;
+            staminaTimer = waitTime;
         } else {
             isSliding = false;
             if (!runButtonPressed) {
