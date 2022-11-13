@@ -15,8 +15,10 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    private void OnTriggerEnter(Collider other)
     {
-        Pickup();
+        if (other.tag == "Player") {
+            Pickup();
+        }
     }
 }

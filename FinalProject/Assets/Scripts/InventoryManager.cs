@@ -14,6 +14,8 @@ public class InventoryManager : MonoBehaviour
     public float capacity;
     public float maxCapacity;
 
+    public ItemController[] InventoryItems;
+
     private void Awake()
     {
         Instance = this;
@@ -44,10 +46,21 @@ public class InventoryManager : MonoBehaviour
             //itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
         }
+        SetInventoryItems();
     }
 
     void Update()
     {
         capacity = Items.Count;
+    }
+
+    public void SetInventoryItems()
+    {
+        InventoryItems = ItemContent.GetComponentsInChildren<ItemController>();
+
+        for (int i = 0; i < Items.Count; i++)
+        {
+            InventoryItems[i].AddItem(Items[i]);
+        }
     }
 }

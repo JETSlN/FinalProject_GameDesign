@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     bool runButtonPressed;
     [SerializeField]
     bool canJump;
+    public float staminaItem = 1f;
 
     public Transform leftWallCheck;
     public Transform rightWallCheck;
@@ -77,10 +78,10 @@ public class PlayerMovement : MonoBehaviour
         // Check run boolean with if else statement
         if (runButtonPressed && fixedJoystick.Vertical > 0.5 && stamina > 0 && !slidePressed) {
             speed = runSpeed;
-            stamina -= 10f * Time.deltaTime;
+            stamina -= 10f * Time.deltaTime / staminaItem;
             staminaTimer = waitTime;
             if (isLeftWall && !isGrounded) {
-                stamina -= 10f * Time.deltaTime;
+                stamina -= 10f * Time.deltaTime / staminaItem;
                 gravity = 0f;
                 velocity.y = Mathf.Clamp(gravity, 0, 0);
                 if (camera.transform.localEulerAngles.z == 0) {
@@ -93,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
                 canJump = true;
             }
             if (isRightWall && !isGrounded) {
-                stamina -= 10f * Time.deltaTime;
+                stamina -= 10f * Time.deltaTime / staminaItem;
                 gravity = 0f; 
                 velocity.y = Mathf.Clamp(gravity, 0, 0);
                 if (camera.transform.localEulerAngles.z < 30) {
@@ -123,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
                 camera.Translate(new Vector3 (0, -0.25f, 0));
                 playerCapsule.Translate(new Vector3 (0, -0.25f, 0));
             }
-            stamina -= 25f * Time.deltaTime;
+            stamina -= 25f * Time.deltaTime / staminaItem;
             staminaTimer = waitTime;
         } else {
             isSliding = false;
@@ -180,7 +181,6 @@ public class PlayerMovement : MonoBehaviour
         runButtonPressed = false;
     }
 
-
     public void SlideHeld() {
         if (stamina > 5f) {
             slidePressed = true;
@@ -189,5 +189,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void SlideReleased() {
         slidePressed = false;
+    }
+
+    public void staminaConsumable(float duration) {
+        staminaItem = 2f;
+        Invoke("normalStamina", duration);
+    }
+
+    void normalStamina() {
+        staminaItem = 1f;
     }
 }
