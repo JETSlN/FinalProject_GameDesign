@@ -51,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
     public Transform camera;
     public bool isWallRunning;
 
+    bool slidePressed;
+    public Transform playerCapsule;
+    bool isSliding;
+
     // Update is called once per frame
     void Update()
     {
@@ -71,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Check run boolean with if else statement
-        if (runButtonPressed && fixedJoystick.Vertical > 0.5 && stamina > 0) {
+        if (runButtonPressed && fixedJoystick.Vertical > 0.5 && stamina > 0 && !slidePressed) {
             speed = runSpeed;
             stamina -= 10f * Time.deltaTime;
             staminaTimer = waitTime;
@@ -99,7 +103,9 @@ public class PlayerMovement : MonoBehaviour
                 canJump = true;
             }
         } else {
-            speed = walkSpeed;
+            if (!slidePressed) {
+                speed = walkSpeed;
+            }
             gravity = -20f;
             if (camera.transform.localEulerAngles.z < 180 && camera.transform.localEulerAngles.z != 0) {
                 camera.transform.Rotate(0, 0, -1);
@@ -110,10 +116,33 @@ public class PlayerMovement : MonoBehaviour
             isWallRunning = false;
         }
 
+        if (slidePressed && isGrounded && !runButtonPressed) {
+            isSliding = true;
+            speed = runSpeed;
+            if (camera.position.y - gameObject.transform.position.y > -0.75) {
+                camera.Translate(new Vector3 (0, -0.25f, 0));
+                playerCapsule.Translate(new Vector3 (0, -0.25f, 0));
+            }
+            stamina -= 5f * Time.deltaTime;
+        } else {
+            isSliding = false;
+            if (!runButtonPressed) {
+                speed = walkSpeed;
+            }
+            if (camera.position.y - gameObject.transform.position.y < 0.75) {
+                camera.Translate(new Vector3 (0, 0.25f, 0));
+                playerCapsule.Translate(new Vector3 (0, 0.25f, 0));
+            }
+        }
+
         float x = fixedJoystick.Horizontal;
         float z = fixedJoystick.Vertical;
 
-        move = transform.right * x + transform.forward * z;
+        if(!isSliding) {
+            move = transform.right * x + transform.forward * z;
+        } else {
+            move = transform.forward;
+        }
         
         controller.Move(move * speed * Time.deltaTime);
 
@@ -148,5 +177,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void RunReleased() {
         runButtonPressed = false;
+    }
+
+
+    public void SlideHeld() {
+        if (stamina > 5f) {
+            slidePressed = true;
+        }
+    }
+
+    public void SlideReleased() {
+        slidePressed = false;
     }
 }
