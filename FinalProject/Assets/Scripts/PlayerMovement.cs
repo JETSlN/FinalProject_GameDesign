@@ -9,12 +9,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public FixedJoystick fixedJoystick;
     public CharacterController controller;
-    //public Rigidbody rb;
 
     float speed;
     public float gravity = -20f;
     [SerializeField]
     float jumpHeight = 3f;
+    Vector3 move;
 
     public Transform groundCheck;
     public LayerMask groundMask;
@@ -36,35 +36,34 @@ public class PlayerMovement : MonoBehaviour
     float walkSpeed;
     public StaminaBar bar;
     bool runButtonPressed;
+    [SerializeField]
+    bool canJump;
 
     public Transform leftWallCheck;
     public Transform rightWallCheck;
     public LayerMask wallMask;
+    [SerializeField]
     bool isRightWall;
+    [SerializeField]
     bool isLeftWall;
     [SerializeField]
     float wallDistance = 0.4f;
-    [SerializeField]
-    float wallJumpForce;
     public Transform camera;
+    public bool isWallRunning;
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        CheckForWall();
-        WallRunInput();
-        camera.transform.localRotation = Quaternion.Euler(camera.localRotation.x, 10, wallCameraTilt);
-        orientation.transform.localRotation = Quaternion.Euler(0, 10, 0);
-        */
-
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        isRightWall = Physics.CheckSphere(rightWallCheck.position, wallDistance, wallMask);
-        isLeftWall = Physics.CheckSphere(leftWallCheck.position, wallDistance, wallMask);
+        isRightWall = Physics.CheckBox(rightWallCheck.position, new Vector3(wallDistance/2, 0.75f, wallDistance/2), Quaternion.identity, wallMask);
+        isLeftWall = Physics.CheckBox(leftWallCheck.position, new Vector3(wallDistance/2, 0.75f, wallDistance/2), Quaternion.identity, wallMask);
 
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded)
         {
-            velocity.y = -2f;
+            canJump = true;
+            if (velocity.y < 0f) {
+                velocity.y = -2f;
+            }
         }
 
         if (!isRightWall && !isLeftWall) {
@@ -86,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
                 if (camera.transform.localEulerAngles.z > 330) {
                     camera.transform.Rotate(0,0,-1);
                 }
+                isWallRunning = true;
+                canJump = true;
             }
             if (isRightWall && !isGrounded) {
                 stamina -= 10f * Time.deltaTime;
@@ -94,22 +95,26 @@ public class PlayerMovement : MonoBehaviour
                 if (camera.transform.localEulerAngles.z < 30) {
                     camera.transform.Rotate(0,0,1);
                 }
+                isWallRunning = true;
+                canJump = true;
             }
         } else {
-            gravity = -20f;
             speed = walkSpeed;
+            gravity = -20f;
             if (camera.transform.localEulerAngles.z < 180 && camera.transform.localEulerAngles.z != 0) {
                 camera.transform.Rotate(0, 0, -1);
             }
             if (camera.transform.localEulerAngles.z > 180 && camera.transform.localEulerAngles.z != 0) {
                 camera.transform.Rotate(0, 0, 1);
             }
+            isWallRunning = false;
         }
 
         float x = fixedJoystick.Horizontal;
         float z = fixedJoystick.Vertical;
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        move = transform.right * x + transform.forward * z;
+        
         controller.Move(move * speed * Time.deltaTime);
 
         velocity.y += gravity * Time.deltaTime;
@@ -128,21 +133,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Jump() {
-        if (isGrounded) {
+        if (canJump) {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            canJump = false;
         }
-        /*
-        if (isLeftWall && speed > walkSpeed && !isGrounded && stamina > 10) {
-            stamina -= 10f;
-            staminaTimer = waitTime;
-            velocity.x = Mathf.Sqrt(wallJumpForce);
-        }
-        if (isRightWall && speed > walkSpeed && !isGrounded && stamina > 10) {
-            stamina -= 10f;
-            staminaTimer = waitTime;
-            velocity.x = Mathf.Sqrt(-wallJumpForce);
-        }
-        */
     }
 
     public void RunHeld() {

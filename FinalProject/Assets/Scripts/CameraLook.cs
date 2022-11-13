@@ -11,6 +11,7 @@ public class CameraLook : MonoBehaviour
     public float xBorder;
 
     public Transform player;
+    public PlayerMovement wallRun;
     float xRotation = 0f;
     int touchIndex;
 
@@ -25,7 +26,7 @@ public class CameraLook : MonoBehaviour
                 touchIndex = Input.touchCount - 1;
             }
             Touch touch = Input.GetTouch(touchIndex);
-            if (touch.phase == TouchPhase.Moved && touch.position.x > xBorder) {
+            if (touch.phase == TouchPhase.Moved && touch.position.x > xBorder && !wallRun.isWallRunning) {
                 float touchX = touch.deltaPosition.x * sensitivity;
                 float touchY = touch.deltaPosition.y * sensitivity;
 
