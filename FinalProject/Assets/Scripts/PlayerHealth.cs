@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     float currentHealth;
     public Transform player;
-    //public HealthBar bar;
+    public HealthBar bar;
 
     void Start()
     {
@@ -29,12 +29,16 @@ public class PlayerHealth : MonoBehaviour
     void FixedUpdate()
     {
         //Constantly updates health bar
-        //bar.UpdateHealthBar(maxHealth, currentHealth);
+        bar.UpdateHealthBar(maxHealth, currentHealth);
         if (currentHealth == 0f || player.position.y < -10)
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Debug.Log("Skill Issue tbh");
             currentHealth = maxHealth;
         }
+    }
+
+    public void Heal(float amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth+amount, 0, 6);
     }
 }

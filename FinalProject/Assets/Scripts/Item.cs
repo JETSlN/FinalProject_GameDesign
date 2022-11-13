@@ -5,6 +5,14 @@ public class Item : ScriptableObject
 {
     public int id;
     public string itemName;
-    public int value;
+    public float value;
     public Sprite icon;
+    public ItemType itemType;
+
+    public enum ItemType
+    {
+        HP,
+        Stamina,
+        Projectile
+    }
 }
