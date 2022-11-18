@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //to remove later
 
 // Code origin from Brackeys First person FPS Controller
 // Modified to use mobile joysticks instead of mouse
@@ -61,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
     public float controllerHeight;
     public float groundCheckYPos;
 
+    public float yPosDeath;
+
     private void Awake()
     {
         Instance = this;
@@ -87,11 +90,10 @@ public class PlayerMovement : MonoBehaviour
 
         // Check run boolean with if else statement
         if (runButtonPressed && fixedJoystick.Vertical > 0.5 && stamina > 0 && !slidePressed) {
-            speed = runSpeed;
-            stamina -= 10f * Time.deltaTime / staminaItem;
-            staminaTimer = waitTime;
             if (isLeftWall && !isGrounded) {
-                stamina -= 10f * Time.deltaTime / staminaItem;
+                speed = runSpeed;
+                staminaTimer = waitTime;
+                stamina -= 20f * Time.deltaTime / staminaItem;
                 gravity = 0f;
                 velocity.y = Mathf.Clamp(gravity, 0, 0);
                 if (camera.transform.localEulerAngles.z == 0) {
@@ -102,9 +104,10 @@ public class PlayerMovement : MonoBehaviour
                 }
                 isWallRunning = true;
                 canJump = true;
-            }
-            if (isRightWall && !isGrounded) {
-                stamina -= 10f * Time.deltaTime / staminaItem;
+            } else if (isRightWall && !isGrounded) {
+                speed = runSpeed;
+                staminaTimer = waitTime;
+                stamina -= 20f * Time.deltaTime / staminaItem;
                 gravity = 0f; 
                 velocity.y = Mathf.Clamp(gravity, 0, 0);
                 if (camera.transform.localEulerAngles.z < 30) {
@@ -112,6 +115,10 @@ public class PlayerMovement : MonoBehaviour
                 }
                 isWallRunning = true;
                 canJump = true;
+            } else if (isGrounded) {
+                speed = runSpeed;
+                staminaTimer = waitTime;
+                stamina -= 10f * Time.deltaTime / staminaItem;
             }
         } else {
             if (!slidePressed) {
@@ -176,6 +183,9 @@ public class PlayerMovement : MonoBehaviour
         }
         if (staminaTimer <= 0 && stamina < 50 && speed == walkSpeed) {
             stamina += 5f * Time.deltaTime;
+        }
+        if (gameObject.transform.position.y < yPosDeath) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
