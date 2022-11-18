@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 23853
+  controlID: 134
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 23854
+  controlID: 135
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 23855
+  controlID: 136
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,36 +317,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Jeff's Import/Crystal_Mine/Materials
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Jeff's Import/Crystal_Mine/Materials
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Jeffr\OneDrive\Documents\GitHub\Croomies\FinalProject_GameDesign\FinalProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 026c0000
-    m_LastClickedID: 27650
-    m_ExpandedIDs: 00000000de5f0000e26b0000e66b0000586d000000ca9a3b
+    m_SelectedIDs: 70600000
+    m_LastClickedID: 24688
+    m_ExpandedIDs: 00000000426000006a6000007860000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scenes
-      m_OriginalName: Scenes
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 24588
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000de5f0000
+    m_ExpandedIDs: 0000000042600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -488,9 +488,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f2d6ffff
-      m_LastClickedID: -10510
-      m_ExpandedIDs: 30fdfeff0607ffffd42fffff346effffdc6effffee6effffb8a5ffff76faffff36fbffff
+      m_SelectedIDs: b85d0000
+      m_LastClickedID: 23992
+      m_ExpandedIDs: 36fbfffffc5d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -739,9 +739,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -11.250734, y: 6.0089974, z: 24.079409}
+    m_Target: {x: -4.6912227, y: 10.06482, z: 188.54912}
     speed: 2
-    m_Value: {x: -11.250734, y: 6.0089974, z: 24.079409}
+    m_Value: {x: -4.6912227, y: 10.06482, z: 188.54912}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -788,13 +788,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.03778545, y: -0.25953558, z: -0.014275828, w: 0.9652566}
+    m_Target: {x: 0.044845246, y: -0.041197233, z: -0.002188203, w: 0.9985027}
     speed: 2
-    m_Value: {x: -0.036324758, y: -0.25946456, z: -0.013881062, w: 0.9649694}
+    m_Value: {x: 0.04483233, y: -0.042679567, z: -0.0021201689, w: 0.99808025}
   m_Size:
-    m_Target: 10
+    m_Target: 3.9751215
     speed: 2
-    m_Value: 10
+    m_Value: 3.9751215
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -880,7 +880,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
