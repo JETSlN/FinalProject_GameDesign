@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44407046, g: 0.49331486, b: 0.57238823, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1114,6 +1114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595f07ceb372f6843847d984ba9aaf8b, type: 3}
+--- !u!143 &1018401506 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 8147349255942413388, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
+  m_PrefabInstance: {fileID: 8147349256457517557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1024941800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3237,6 +3242,10 @@ PrefabInstance:
       propertyPath: bar
       value: 
       objectReference: {fileID: 1202479474}
+    - target: {fileID: 8147349255942413388, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8147349255942413389, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
       propertyPath: m_Name
       value: TestPlayerGameObject
@@ -3246,12 +3255,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1202479473}
     - target: {fileID: 8147349255942413390, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1018401506}
+    - target: {fileID: 8147349255942413390, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
       propertyPath: fixedJoystick
       value: 
       objectReference: {fileID: 1498372079}
+    - target: {fileID: 8147349255942413390, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
+      propertyPath: groundCheckYPos
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147349255942413390, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
+      propertyPath: controllerHeight
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8147349255942413391, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147349255942413391, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8147349255942413391, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
       propertyPath: m_LocalPosition.x

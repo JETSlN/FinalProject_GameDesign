@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static PlayerHealth Instance;
     [SerializeField]
     float maxHealth = 5f;
     [SerializeField]
@@ -11,6 +12,11 @@ public class PlayerHealth : MonoBehaviour
     public Transform player;
     public HealthBar bar;
 
+    void Awake()
+    {
+        Instance = this;
+    }
+    
     void Start()
     {
         // Player starts at full health

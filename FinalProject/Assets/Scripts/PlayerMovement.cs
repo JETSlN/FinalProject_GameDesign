@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
+
     public FixedJoystick fixedJoystick;
     public CharacterController controller;
 
@@ -55,7 +57,14 @@ public class PlayerMovement : MonoBehaviour
     bool slidePressed;
     public Transform playerCapsule;
     bool isSliding;
+    public float controllerHeight;
+    public float groundCheckYPos;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -120,6 +129,9 @@ public class PlayerMovement : MonoBehaviour
         if (slidePressed && isGrounded && !runButtonPressed && stamina > 0) {
             isSliding = true;
             speed = runSpeed;
+            //controller.height = controllerHeight / 2;
+            //controller.center = new Vector3 (0, controllerHeight/2, 0);
+            //groundCheck.localPosition = new Vector3 (0, 0, 0);
             if (camera.position.y - gameObject.transform.position.y > -0.75) {
                 camera.Translate(new Vector3 (0, -0.25f, 0));
                 playerCapsule.Translate(new Vector3 (0, -0.25f, 0));
@@ -128,6 +140,9 @@ public class PlayerMovement : MonoBehaviour
             staminaTimer = waitTime;
         } else {
             isSliding = false;
+            //controller.height = controllerHeight;
+            //controller.center = new Vector3 (0, 0, 0);
+            //groundCheck.localPosition = new Vector3 (0, groundCheckYPos, 0);
             if (!runButtonPressed) {
                 speed = walkSpeed;
             }
