@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
     bool slidePressed;
     public Transform playerCapsule;
     bool isSliding;
+    public float controllerHeight;
 
     // Update is called once per frame
     void Update()
@@ -119,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (slidePressed && isGrounded && !runButtonPressed && stamina > 0) {
             isSliding = true;
+            controller.height = controllerHeight/2;
             speed = runSpeed;
             if (camera.position.y - gameObject.transform.position.y > -0.75) {
                 camera.Translate(new Vector3 (0, -0.25f, 0));
@@ -128,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
             staminaTimer = waitTime;
         } else {
             isSliding = false;
+            controller.height = controllerHeight;
             if (!runButtonPressed) {
                 speed = walkSpeed;
             }

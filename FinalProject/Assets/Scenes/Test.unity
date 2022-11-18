@@ -4416,6 +4416,10 @@ PrefabInstance:
       propertyPath: fixedJoystick
       value: 
       objectReference: {fileID: 1498372079}
+    - target: {fileID: 1331670248282379477, guid: b3ed2ad7884f14e898facfb7bc8144d2, type: 3}
+      propertyPath: controllerHeight
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1331670248282379478, guid: b3ed2ad7884f14e898facfb7bc8144d2, type: 3}
       propertyPath: m_Name
       value: TestPlayerGameObject
