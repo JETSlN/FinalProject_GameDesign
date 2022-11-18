@@ -168,8 +168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 18d80d939039c4e9687dff32f364438e, type: 2}
-  playerHP: {fileID: 0}
-  playerStamina: {fileID: 0}
 --- !u!43 &204189873
 Mesh:
   m_ObjectHideFlags: 0
@@ -475,6 +473,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716975ab999974e33822ae9d452f5aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &574090664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 574090665}
+  - component: {fileID: 574090667}
+  - component: {fileID: 574090666}
+  m_Layer: 5
+  m_Name: Stamina
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &574090665
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574090664}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1202479475}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 900, y: 700}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &574090666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574090664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ba86cb9c87dd64feba19a23d33c7a015, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &574090667
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574090664}
+  m_CullTransparentMesh: 1
 --- !u!1 &577373703 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1141620501440248, guid: 595f07ceb372f6843847d984ba9aaf8b, type: 3}
@@ -506,8 +580,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 18d80d939039c4e9687dff32f364438e, type: 2}
-  playerHP: {fileID: 0}
-  playerStamina: {fileID: 0}
 --- !u!64 &577373706
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1020,8 +1092,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 18d80d939039c4e9687dff32f364438e, type: 2}
-  playerHP: {fileID: 0}
-  playerStamina: {fileID: 0}
 --- !u!114 &841988969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,6 +1691,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232bdafc622554acfae438579a0574e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1202479475 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3149386637443509496, guid: f2a1d4e97caaaa148946af4bf93a8795, type: 3}
+  m_PrefabInstance: {fileID: 3149386636459167112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1232960373
 Mesh:
   m_ObjectHideFlags: 0
@@ -1816,8 +1891,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 18d80d939039c4e9687dff32f364438e, type: 2}
-  playerHP: {fileID: 0}
-  playerStamina: {fileID: 0}
 --- !u!64 &1298857634
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2177,8 +2250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 18d80d939039c4e9687dff32f364438e, type: 2}
-  playerHP: {fileID: 0}
-  playerStamina: {fileID: 0}
 --- !u!114 &1549866130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2803,8 +2874,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 18d80d939039c4e9687dff32f364438e, type: 2}
-  playerHP: {fileID: 0}
-  playerStamina: {fileID: 0}
 --- !u!114 &2084288640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3026,6 +3095,10 @@ PrefabInstance:
     - target: {fileID: 3149386637443509476, guid: f2a1d4e97caaaa148946af4bf93a8795, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149386637443509479, guid: f2a1d4e97caaaa148946af4bf93a8795, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3149386637443509496, guid: f2a1d4e97caaaa148946af4bf93a8795, type: 3}
       propertyPath: m_Pivot.x
@@ -3258,6 +3331,10 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1018401506}
+    - target: {fileID: 8147349255942413390, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
+      propertyPath: staminaBoost
+      value: 
+      objectReference: {fileID: 574090664}
     - target: {fileID: 8147349255942413390, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
       propertyPath: fixedJoystick
       value: 

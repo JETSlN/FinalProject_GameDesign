@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     bool canJump;
     public float staminaItem = 1f;
+    public GameObject staminaBoost;
 
     public Transform leftWallCheck;
     public Transform rightWallCheck;
@@ -64,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Instance = this;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -208,10 +209,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void staminaConsumable(float duration) {
         staminaItem = 2f;
+        //staminaBoost.SetActive(true);
         Invoke("normalStamina", duration);
     }
 
     void normalStamina() {
+        //staminaBoost.SetActive(false);
         staminaItem = 1f;
     }
 }
