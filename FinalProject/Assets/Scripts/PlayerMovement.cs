@@ -137,20 +137,19 @@ public class PlayerMovement : MonoBehaviour
         if (slidePressed && isGrounded && !runButtonPressed && stamina > 0) {
             isSliding = true;
             speed = runSpeed;
-            //controller.height = controllerHeight / 2;
-            //controller.center = new Vector3 (0, controllerHeight/2, 0);
-            //groundCheck.localPosition = new Vector3 (0, 0, 0);
+            /*
             if (camera.position.y - gameObject.transform.position.y > -0.75) {
                 camera.Translate(new Vector3 (0, -0.25f, 0));
                 playerCapsule.Translate(new Vector3 (0, -0.25f, 0));
             }
+            */
             stamina -= 25f * Time.deltaTime / staminaItem;
             staminaTimer = waitTime;
         } else {
             isSliding = false;
-            //controller.height = controllerHeight;
-            //controller.center = new Vector3 (0, 0, 0);
-            //groundCheck.localPosition = new Vector3 (0, groundCheckYPos, 0);
+            if (stamina <= 0) {
+                SlideReleased();
+            }
             if (!runButtonPressed) {
                 speed = walkSpeed;
             }
@@ -210,11 +209,15 @@ public class PlayerMovement : MonoBehaviour
     public void SlideHeld() {
         if (stamina > 5f) {
             slidePressed = true;
+            controller.center = new Vector3(0, controller.center.y-groundCheckYPos, 0);
+            groundCheck.localPosition = new Vector3(0,0,0);
         }
     }
 
     public void SlideReleased() {
         slidePressed = false;
+        controller.center = new Vector3(0, 0, 0);
+        groundCheck.localPosition = new Vector3(0,groundCheckYPos,0);
     }
 
     public void staminaConsumable(float duration) {
