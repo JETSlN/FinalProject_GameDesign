@@ -6,8 +6,6 @@ using UnityEngine;
 public class ItemController : MonoBehaviour
 {
     public Item item;
-    //public PlayerHealth playerHP;
-    //public PlayerMovement playerStamina;
 
     public void RemoveItem()
     {
@@ -26,14 +24,13 @@ public class ItemController : MonoBehaviour
         switch(item.itemType)
         {
             case Item.ItemType.HP:
-                //PlayerHealth.Instance.Heal(item.value);
                 PlayerHealth.Instance.Heal(item.value);
                 break;
             case Item.ItemType.Stamina:
                 PlayerMovement.Instance.staminaConsumable(item.value);
                 break;
             case Item.ItemType.Projectile:
-                Debug.Log("Throw Item");
+                ThrowObject.Instance.throwingObject(item.itemName);
                 break;
         }
 
