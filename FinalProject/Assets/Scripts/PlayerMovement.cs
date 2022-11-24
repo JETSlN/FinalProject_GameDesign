@@ -222,12 +222,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void staminaConsumable(float duration) {
         staminaItem = 2f;
-        //staminaBoost.SetActive(true);
+        staminaBoost.SetActive(true);
         Invoke("normalStamina", duration);
     }
 
     void normalStamina() {
-        //staminaBoost.SetActive(false);
+        staminaBoost.SetActive(false);
         staminaItem = 1f;
     }
 }
