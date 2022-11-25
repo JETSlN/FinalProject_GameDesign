@@ -33,7 +33,6 @@ Transform:
   m_Children:
   - {fileID: 1331670248665083738}
   - {fileID: 1331670248418843674}
-  - {fileID: 1331670249981314978}
   - {fileID: 1331670250025403148}
   - {fileID: 1331670249828850448}
   m_Father: {fileID: 0}
@@ -86,6 +85,7 @@ MonoBehaviour:
   bar: {fileID: 0}
   canJump: 0
   staminaItem: 1
+  staminaBoost: {fileID: 0}
   leftWallCheck: {fileID: 1331670249828850448}
   rightWallCheck: {fileID: 1331670250025403148}
   wallMask:
@@ -97,6 +97,9 @@ MonoBehaviour:
   camera: {fileID: 1331670248418843674}
   isWallRunning: 0
   playerCapsule: {fileID: 1331670248665083738}
+  controllerHeight: 0
+  groundCheckYPos: 0
+  yPosDeath: 0
 --- !u!114 &1331670248282379474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +247,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.5, z: 1.2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1331670249981314978}
   m_Father: {fileID: 1331670248282379476}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -341,7 +345,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1331670248282379476}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1331670249981314981
 GameObject:
@@ -366,13 +370,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331670249981314981}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.8000001, z: 0}
+  m_LocalScale: {x: 0.83333325, y: 0.6666667, z: 0.83333325}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1331670248282379476}
-  m_RootOrder: 2
+  m_Father: {fileID: 1331670248665083738}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1331670250025403151
 GameObject:
@@ -403,5 +407,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1331670248282379476}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

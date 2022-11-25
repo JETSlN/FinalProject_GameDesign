@@ -209,15 +209,17 @@ public class PlayerMovement : MonoBehaviour
     public void SlideHeld() {
         if (stamina > 5f) {
             slidePressed = true;
-            controller.center = new Vector3(0, controller.center.y-groundCheckYPos, 0);
-            groundCheck.localPosition = new Vector3(0,0,0);
+            controller.height = controllerHeight * 2/5;
+            //controller.center = new Vector3(0, controller.center.y-groundCheckYPos, 0);
+            //groundCheck.localPosition = new Vector3(0,0,0);
         }
     }
 
     public void SlideReleased() {
         slidePressed = false;
-        controller.center = new Vector3(0, 0, 0);
-        groundCheck.localPosition = new Vector3(0,groundCheckYPos,0);
+        controller.height = controllerHeight;
+        //controller.center = new Vector3(0, 0, 0);
+        //groundCheck.localPosition = new Vector3(0,groundCheckYPos,0);
     }
 
     public void staminaConsumable(float duration) {
