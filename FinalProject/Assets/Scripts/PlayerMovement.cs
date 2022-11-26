@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform playerCapsule;
     bool isSliding;
     public float controllerHeight;
-    public float groundCheckYPos;
+    //public float groundCheckYPos;
 
     public float yPosDeath;
 
@@ -207,7 +207,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void SlideHeld() {
-        if (stamina > 5f) {
+        if (stamina > 5f && isGrounded) {
             slidePressed = true;
             controller.height = controllerHeight * 2/5;
             //controller.center = new Vector3(0, controller.center.y-groundCheckYPos, 0);
