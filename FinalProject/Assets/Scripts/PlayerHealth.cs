@@ -37,7 +37,6 @@ public class PlayerHealth : MonoBehaviour
         bar.UpdateHealthBar(maxHealth, currentHealth);
         if (currentHealth == 0f || player.position.y < -10)
         {
-            Debug.Log("Skill Issue tbh");
             currentHealth = maxHealth;
         }
     }
