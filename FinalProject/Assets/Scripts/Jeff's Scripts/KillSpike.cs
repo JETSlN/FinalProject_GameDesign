@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 public class KillSpike: MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
-        print("Hit");   
+        
         if(other.gameObject.tag.Equals("Player"))
         {
+            print("Hit");   
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

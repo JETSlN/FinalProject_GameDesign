@@ -8,8 +8,11 @@ using UnityEngine.SceneManagement; //to remove later
 
 public class PlayerMovement : MonoBehaviour
 {
-    public static PlayerMovement Instance;
+    public StayCart ymovement;
+    public bool cart = false;
 
+    public static PlayerMovement Instance;
+    
     public FixedJoystick fixedJoystick;
     public CharacterController controller;
 
@@ -64,6 +67,15 @@ public class PlayerMovement : MonoBehaviour
 
     public float yPosDeath;
 
+    public void cartitup(){
+        if(cart == false){
+            cart = true;
+        }
+        else{
+            cart = false;
+        }
+    }
+
     private void Awake()
     {
         Instance = this;
@@ -72,6 +84,35 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float x = fixedJoystick.Horizontal;
+        float z = fixedJoystick.Vertical;
+
+        if (cart) {
+            if (x >= 0.5 && (camera.transform.localEulerAngles.z == 0 || camera.transform.localEulerAngles.z > 330)){
+                
+                camera.transform.Rotate(0,0,-1);
+                
+            }
+            else if (x <= -0.5 && camera.transform.localEulerAngles.z < 30){
+                
+                camera.transform.Rotate(0,0,1);
+            }
+            else if (z <= -0.5 && (int)camera.transform.localEulerAngles.z == 0){
+                ymovement.y = 2f;
+            }
+            else{
+                if (camera.transform.localEulerAngles.z < 180 && camera.transform.localEulerAngles.z != 0 && x > -0.5) {
+                    camera.transform.Rotate(0, 0, -1);
+                }
+                if (camera.transform.localEulerAngles.z > 180 && camera.transform.localEulerAngles.z != 0 && x < 0.5) {
+                    camera.transform.Rotate(0, 0, 1);
+                }
+                if (ymovement.y < 3){
+                    ymovement.y = 3f;
+                }
+            }
+        }
+        else {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         isRightWall = Physics.CheckBox(rightWallCheck.position, new Vector3(wallDistance/2, 0.75f, wallDistance/2), Quaternion.identity, wallMask);
         isLeftWall = Physics.CheckBox(leftWallCheck.position, new Vector3(wallDistance/2, 0.75f, wallDistance/2), Quaternion.identity, wallMask);
@@ -159,8 +200,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        float x = fixedJoystick.Horizontal;
-        float z = fixedJoystick.Vertical;
+
+
 
         if(!isSliding) {
             move = transform.right * x + transform.forward * z;
@@ -172,6 +213,8 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+        }
+        
     }
 
     void FixedUpdate()
