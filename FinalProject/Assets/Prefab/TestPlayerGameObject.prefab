@@ -50,7 +50,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3
+  m_Height: 2.5
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.7
@@ -69,6 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716975ab999974e33822ae9d452f5aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carty: {fileID: 0}
+  ymovement: {fileID: 0}
+  cart: 0
+  directionCart: 0
   fixedJoystick: {fileID: 0}
   controller: {fileID: 1331670248282379479}
   gravity: -20
@@ -98,8 +102,7 @@ MonoBehaviour:
   camera: {fileID: 1331670248418843674}
   isWallRunning: 0
   playerCapsule: {fileID: 1331670248665083738}
-  controllerHeight: 0
-  groundCheckYPos: 0
+  controllerHeight: 2.5
   yPosDeath: 0
 --- !u!114 &1331670248282379474
 MonoBehaviour:
