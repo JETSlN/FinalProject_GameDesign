@@ -6,7 +6,7 @@ public class SCS : MonoBehaviour {
 
 	public Transform Player ;
 	public  float CloudsSpeed;
-
+	public Vector3 offset;
 
 
 
@@ -18,7 +18,7 @@ public class SCS : MonoBehaviour {
 
 
 
-		gameObject.transform.position = Player.transform.position;
+		gameObject.transform.position = Player.transform.position + offset;
 
 		transform.Rotate(0,Time.deltaTime*CloudsSpeed ,0); 
 	}
