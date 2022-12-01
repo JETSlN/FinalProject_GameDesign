@@ -13,10 +13,7 @@ public class Lifetime : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "Player" && gameObject.tag == "PlayerProjectile") {
-            Destroy(gameObject);
-        }
-        if (other.tag != "Enemy" && gameObject.tag == "EnemyProjectile") {
+        if (other.tag != "Player") {
             Destroy(gameObject);
         }
     }

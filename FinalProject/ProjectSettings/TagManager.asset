@@ -5,8 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Minecart
-  - PlayerProjectile
-  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -16,7 +14,7 @@ TagManager:
   - UI
   - Wall
   - Volume
-  - Player
+  - 
   - 
   - 
   - 
