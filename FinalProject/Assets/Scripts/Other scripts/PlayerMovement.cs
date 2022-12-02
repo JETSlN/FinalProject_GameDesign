@@ -269,6 +269,7 @@ public class PlayerMovement : MonoBehaviour
         if (stamina > 5f && isGrounded) {
             slidePressed = true;
             controller.height = controllerHeight * 2/5;
+            groundDistance = 1f;
             //controller.center = new Vector3(0, controller.center.y-groundCheckYPos, 0);
             //groundCheck.localPosition = new Vector3(0,0,0);
         }
@@ -277,6 +278,7 @@ public class PlayerMovement : MonoBehaviour
     public void SlideReleased() {
         slidePressed = false;
         controller.height = controllerHeight;
+        groundDistance = 0.4f;
         //controller.center = new Vector3(0, 0, 0);
         //groundCheck.localPosition = new Vector3(0,groundCheckYPos,0);
     }
