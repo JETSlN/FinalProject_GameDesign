@@ -18,11 +18,11 @@ public class SpikeSpawner : MonoBehaviour
 
     public void SpawnProjectile()
     {
-        print(transform.rotation);
+        
         GameObject b = Instantiate(projectile, transform.position, transform.rotation);
     }
     IEnumerator Spawn(){
-        print("Spawn");
+        
         yield return new WaitForSeconds(Random.Range(5,30));
         SpawnProjectile();
         Awake();

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1331670248282379479}
   - component: {fileID: 1331670248282379477}
   - component: {fileID: 1331670248282379474}
+  - component: {fileID: 4922415041903795477}
   m_Layer: 0
   m_Name: TestPlayerGameObject
   m_TagString: Player
@@ -33,7 +34,6 @@ Transform:
   m_Children:
   - {fileID: 1331670248665083738}
   - {fileID: 1331670248418843674}
-  - {fileID: 1331670249981314978}
   - {fileID: 1331670250025403148}
   - {fileID: 1331670249828850448}
   m_Father: {fileID: 0}
@@ -50,7 +50,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3
+  m_Height: 2.5
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.7
@@ -69,6 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716975ab999974e33822ae9d452f5aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carty: {fileID: 0}
+  ymovement: {fileID: 0}
+  cart: 0
+  directionCart: 0
   fixedJoystick: {fileID: 0}
   controller: {fileID: 1331670248282379479}
   gravity: -20
@@ -86,6 +90,7 @@ MonoBehaviour:
   bar: {fileID: 0}
   canJump: 0
   staminaItem: 1
+  staminaBoost: {fileID: 0}
   leftWallCheck: {fileID: 1331670249828850448}
   rightWallCheck: {fileID: 1331670250025403148}
   wallMask:
@@ -97,6 +102,8 @@ MonoBehaviour:
   camera: {fileID: 1331670248418843674}
   isWallRunning: 0
   playerCapsule: {fileID: 1331670248665083738}
+  controllerHeight: 2.5
+  yPosDeath: 0
 --- !u!114 &1331670248282379474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +120,21 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 1331670248665083738}
   bar: {fileID: 0}
+--- !u!114 &4922415041903795477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331670248282379478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f44c860774d4dee97459a7ed3ba303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  camera: {fileID: 1331670248418843674}
+  throwForce: 0
 --- !u!1 &1331670248418843679
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +266,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.5, z: 1.2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1331670249981314978}
   m_Father: {fileID: 1331670248282379476}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -341,7 +364,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1331670248282379476}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1331670249981314981
 GameObject:
@@ -366,13 +389,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331670249981314981}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.8000001, z: 0}
+  m_LocalScale: {x: 0.83333325, y: 0.6666667, z: 0.83333325}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1331670248282379476}
-  m_RootOrder: 2
+  m_Father: {fileID: 1331670248665083738}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1331670250025403151
 GameObject:
@@ -403,5 +426,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1331670248282379476}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
