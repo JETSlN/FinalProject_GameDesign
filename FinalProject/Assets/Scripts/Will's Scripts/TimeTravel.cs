@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class TimeTravel : MonoBehaviour
 {
+    public GameObject player;
     public void TimeT()
     {
+        CharacterController cc = player.GetComponent<CharacterController>();
+        cc.enabled = !cc.enabled;
         Debug.Log(transform.position);
         if (transform.position.y > 100)
         {
@@ -16,5 +19,6 @@ public class TimeTravel : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y+100, transform.position.z);
         }
         Debug.Log(transform.position);
+        cc.enabled = !cc.enabled;
     }
 }
