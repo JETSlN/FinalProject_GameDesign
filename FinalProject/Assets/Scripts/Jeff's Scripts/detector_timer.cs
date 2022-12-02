@@ -5,23 +5,26 @@ using UnityEngine;
 public class detector_timer : MonoBehaviour
 {
     public bool first_time = true;
-    public List<GameObject> crystalbomb = new List<GameObject>();
+    public List<Boom> crystalbomb = new List<Boom>();
 
 
     private void OnTriggerEnter(Collider other) {
     if (other.gameObject.tag == "Player" && first_time){
             first_time = false;
-            StartCoroutine(ExampleCoroutine());
+            StartCoroutine(ExampleCoroutine(crystalbomb.Count));
         }   
     }
 
     
-    IEnumerator ExampleCoroutine()
+    IEnumerator ExampleCoroutine(int cb)
     {
 
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
+    for(int i = 0; i < cb; i++){
+        crystalbomb[i].baboom();
         yield return new WaitForSeconds(0.5f);
+    }
+
+
 
 
     }
