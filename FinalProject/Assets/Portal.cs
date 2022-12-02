@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform otherPortal;
+    public GameObject player;
+    public Vector3 offset;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Player"){
+            player.transform.position = otherPortal.transform.position;
+        }
     }
 }
