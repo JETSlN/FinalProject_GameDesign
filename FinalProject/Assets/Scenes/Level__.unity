@@ -671,7 +671,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 8147349256457517557}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250567109}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 716975ab999974e33822ae9d452f5aee, type: 3}
   m_Name: 
@@ -1834,6 +1834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7171e8417edea04b8a7f5d5c9e0b03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1250567109}
 --- !u!1 &1285060165
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,7 +3184,7 @@ PrefabInstance:
       objectReference: {fileID: 1934792292}
     - target: {fileID: 8147349255942413390, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8147349255942413390, guid: 5f39687138f0ee14e9591055a8ed1470, type: 3}
       propertyPath: yPosDeath
