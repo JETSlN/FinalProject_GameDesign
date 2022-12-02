@@ -6,34 +6,34 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 5305565354545e0d5f5f5f7643215e44124f1a79797a7f68297e4e35b0b5623a
-      flags: 0
-    RecentlyUsedSceneGuid-1:
       value: 520850530605085809565426127b0644444e497c287f7f34797a1e37bbb56068
       flags: 0
-    RecentlyUsedSceneGuid-2:
+    RecentlyUsedSceneGuid-1:
       value: 0052045103540b0e545e5876437059444e161e29747177642e7e4f6ae1b76d61
       flags: 0
-    RecentlyUsedSceneGuid-3:
-      value: 020350555d005f5a555f5c7340740e44144f4c282d7f25607b2d4e6ab3e33061
-      flags: 0
-    RecentlyUsedSceneGuid-4:
-      value: 56020600540058580c585c7113775b4647154928787f72327c2b4964bab1366b
-      flags: 0
-    RecentlyUsedSceneGuid-5:
-      value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
-      flags: 0
-    RecentlyUsedSceneGuid-6:
+    RecentlyUsedSceneGuid-2:
       value: 5453015556510f5e58585d20137708134e4e4f7f2f7173652b2c4936e4b3306b
       flags: 0
-    RecentlyUsedSceneGuid-7:
+    RecentlyUsedSceneGuid-3:
       value: 565000505607510a08580970437b084444164c7f787b76367c78186bb0b86661
       flags: 0
-    RecentlyUsedSceneGuid-8:
+    RecentlyUsedSceneGuid-4:
       value: 020952510606580a585a0e2113765a44464e1a2f7b2e77322f784935b2e26460
       flags: 0
-    RecentlyUsedSceneGuid-9:
+    RecentlyUsedSceneGuid-5:
       value: 52550753060d0f5d550a0a76447a0c441715482e797e77697a7d4b30b2b66d61
+      flags: 0
+    RecentlyUsedSceneGuid-6:
+      value: 5157005404015a590859597043715d4443161d2c747e22697c791f36b4b46c68
+      flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 56020600540058580c585c7113775b4647154928787f72327c2b4964bab1366b
+      flags: 0
+    RecentlyUsedSceneGuid-9:
+      value: 020350555d005f5a555f5c7340740e44144f4c282d7f25607b2d4e6ab3e33061
       flags: 0
     UnityRemoteDevice:
       value: 530104565d045908405e5c7233730a494f443d797f78766108
