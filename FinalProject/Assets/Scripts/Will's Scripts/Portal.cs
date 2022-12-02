@@ -10,7 +10,11 @@ public class Portal : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player"){
-            player.transform.position = otherPortal.transform.position;
+            //Debug.Log("teleport");
+            CharacterController cc = player.GetComponent<CharacterController>();
+            cc.enabled = !cc.enabled;
+            player.transform.position = otherPortal.transform.position + offset;
+            cc.enabled = !cc.enabled;
         }
     }
 }
