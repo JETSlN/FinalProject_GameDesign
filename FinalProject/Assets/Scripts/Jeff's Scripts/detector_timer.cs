@@ -20,7 +20,7 @@ public class detector_timer : MonoBehaviour
     {
 
     for(int i = 0; i < cb; i++){
-        crystalbomb[i].baboom();
+        // crystalbomb[i].baboom();
         yield return new WaitForSeconds(0.5f);
     }
 
