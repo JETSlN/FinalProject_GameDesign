@@ -12,13 +12,13 @@ public class TimeLimit : MonoBehaviour
     public TextMeshProUGUI timeText;
 
     void Update() {
-        timeRemaining -= Mathf.Clamp01(Time.deltaTime);
+        timeRemaining -= Time.deltaTime;
 
         if (timeRemaining <= 0) {
             Debug.Log("Skill Issue be faster");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        timeText.text = timeRemaining.ToString() + "s";
+        timeText.text = timeRemaining.ToString("F2") + "s";
     }
 }
