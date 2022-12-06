@@ -19,6 +19,6 @@ public class TimeLimit : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        timeText.text = timeRemaining.ToString("F2") + "s";
+        timeText.text = timeRemaining.ToString("F2") + "  S";
     }
 }
