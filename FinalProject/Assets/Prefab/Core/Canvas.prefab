@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 38b7a7f28acfd4b1a9d6ef1452ccde0e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9056b3d38f3d14ff4831e454b61a20c6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1097,8 +1097,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpened: 0
-  closeY: 0.9
-  openY: 0.7
+  closeY: 0.875
+  openY: 0.675
   button: {fileID: 3149386637496806854}
   inventory: {fileID: 3149386635861039350}
 --- !u!1 &3149386637781319845
