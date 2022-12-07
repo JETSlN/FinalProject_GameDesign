@@ -13,6 +13,7 @@ public class Item : ScriptableObject
     {
         HP,
         Stamina,
-        Projectile
+        Projectile,
+        Information
     }
 }
