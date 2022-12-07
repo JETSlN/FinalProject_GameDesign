@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 50683515}
   - component: {fileID: 50683516}
   m_Layer: 5
-  m_Name: MainMenu
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 50683514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7a138d4f8ae1694181e6ca5d1a68376, type: 3}
+  m_Script: {fileID: 11500000, guid: 081e553dca0c359459e838c1c1edd56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &130303165
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUIT
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4e001caf9d1d2745b61d0c788601428, type: 2}
   m_sharedMaterial: {fileID: -9101929643234626666, guid: d4e001caf9d1d2745b61d0c788601428, type: 2}
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4e001caf9d1d2745b61d0c788601428, type: 2}
   m_sharedMaterial: {fileID: -9101929643234626666, guid: d4e001caf9d1d2745b61d0c788601428, type: 2}
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 758396107}
   - component: {fileID: 758396106}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -530,8 +530,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 50683516}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
+        m_MethodName: PlayLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 984546393}
   - component: {fileID: 984546392}
   m_Layer: 5
-  m_Name: Play
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,8 +664,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 50683516}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
+        m_MethodName: PlayLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 1128412150}
   - component: {fileID: 1128412149}
   m_Layer: 5
-  m_Name: Level
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -882,8 +882,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 50683516}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LevelSelect
+        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
+        m_MethodName: PlayLevel2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -989,7 +989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVEL
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4e001caf9d1d2745b61d0c788601428, type: 2}
   m_sharedMaterial: {fileID: -9101929643234626666, guid: d4e001caf9d1d2745b61d0c788601428, type: 2}
