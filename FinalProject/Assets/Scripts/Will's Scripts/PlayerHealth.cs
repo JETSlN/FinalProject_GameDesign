@@ -1,5 +1,5 @@
 using UnityEngine;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,7 +8,6 @@ public class PlayerHealth : MonoBehaviour
     float maxHealth = 5f;
     [SerializeField]
     float currentHealth;
-    public Transform player;
     public HealthBar bar;
 
     void Awake()
@@ -35,9 +34,9 @@ public class PlayerHealth : MonoBehaviour
     {
         //Constantly updates health bar
         bar.UpdateHealthBar(maxHealth, currentHealth);
-        if (currentHealth == 0f || player.position.y < -10)
+        if (currentHealth == 0f)
         {
-            currentHealth = maxHealth;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

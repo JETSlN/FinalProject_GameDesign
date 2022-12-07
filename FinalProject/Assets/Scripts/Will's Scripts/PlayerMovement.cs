@@ -152,12 +152,19 @@ public class PlayerMovement : MonoBehaviour
                 staminaTimer = waitTime;
                 stamina -= 20f * Time.deltaTime / staminaItem;
                 gravity = 0f;
-                velocity.y = Mathf.Clamp(gravity, 0, 0);
+                velocity.y = 0;
+                /*
                 if (camera.transform.localEulerAngles.z == 0) {
                     camera.transform.Rotate(0,0,-1);
                 }
                 if (camera.transform.localEulerAngles.z > 330) {
                     camera.transform.Rotate(0,0,-1);
+                }
+                */
+                float signAngle = (camera.transform.localEulerAngles.z + 180) % 360 - 180;
+                if (signAngle > -30) {
+                    camera.transform.Rotate(0,0,-1);
+                    Debug.Log(signAngle);
                 }
                 isWallRunning = true;
                 canJump = true;
@@ -166,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
                 staminaTimer = waitTime;
                 stamina -= 20f * Time.deltaTime / staminaItem;
                 gravity = 0f; 
-                velocity.y = Mathf.Clamp(gravity, 0, 0);
+                velocity.y = 0;
                 if (camera.transform.localEulerAngles.z < 30) {
                     camera.transform.Rotate(0,0,1);
                 }
