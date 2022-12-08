@@ -32,6 +32,11 @@ public class ItemController : MonoBehaviour
             case Item.ItemType.Projectile:
                 ThrowObject.Instance.throwingObject(item.itemName);
                 break;
+
+            case Item.ItemType.Information:
+                DialogController.instance.DisplayMessage(item.message);
+                break;
+
         }
 
         RemoveItem();

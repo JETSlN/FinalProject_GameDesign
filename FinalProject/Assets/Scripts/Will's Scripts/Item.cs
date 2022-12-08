@@ -8,6 +8,7 @@ public class Item : ScriptableObject
     public float value;
     public Sprite icon;
     public ItemType itemType;
+    public string message;
 
     public enum ItemType
     {
@@ -17,3 +18,4 @@ public class Item : ScriptableObject
         Information
     }
 }
+ 
