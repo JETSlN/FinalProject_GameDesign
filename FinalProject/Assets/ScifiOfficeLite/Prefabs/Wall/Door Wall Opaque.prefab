@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7386904010870338682}
+  - component: {fileID: 4067026289159815095}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -32,6 +33,26 @@ Transform:
   m_Father: {fileID: 6090240345492802338}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4067026289159815095
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885066705515628965}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89415044d7768e64d841c175652c7d77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6090240345492802339
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,8 +184,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0365753, y: 3.996191, z: 0.1564647}
-  m_Center: {x: 1.4825377, y: 2.001906, z: 0}
+  m_Size: {x: 1.0365753, y: 3.996191, z: 0.7390137}
+  m_Center: {x: 1.4825377, y: 2.001906, z: -0.036712646}
 --- !u!65 &6604210068856579177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,8 +197,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9972272, y: 3.996191, z: 0.1564647}
-  m_Center: {x: -1.5013888, y: 2.001906, z: 0}
+  m_Size: {x: 0.9972272, y: 3.6583738, z: 1.048645}
+  m_Center: {x: -1.5013888, y: 1.8329973, z: 0.04473877}
 --- !u!4 &7321043896175621242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 01e56f6e47b405e4689821759816baf0, type: 3}
