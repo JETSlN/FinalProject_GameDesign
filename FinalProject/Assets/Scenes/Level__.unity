@@ -47784,8 +47784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedX: 30
-  startX: 17
-  endX: -80
+  startX: 10
+  endX: -70
 --- !u!1 &931056667
 GameObject:
   m_ObjectHideFlags: 0
@@ -111840,7 +111840,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 113744444890347013, guid: f2a1d4e97caaaa148946af4bf93a8795, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 221262537570951987, guid: f2a1d4e97caaaa148946af4bf93a8795, type: 3}
       propertyPath: m_Color.b
