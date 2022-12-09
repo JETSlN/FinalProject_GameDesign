@@ -11,7 +11,7 @@ public class ItemPickup : MonoBehaviour
         if (InventoryManager.Instance.capacity < InventoryManager.Instance.maxCapacity) {
             InventoryManager.Instance.Add(Item);
             InventoryManager.Instance.ListItems();
-            DialogController.instance.DisplayMessage("You picked up a " + Item.itemName);
+            DialogController.instance.DisplayMessage("You picked up a " + Item.displayName);
             Destroy(gameObject);
         }
     }

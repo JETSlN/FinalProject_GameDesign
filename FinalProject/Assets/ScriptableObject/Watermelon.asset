@@ -17,3 +17,6 @@ MonoBehaviour:
   value: 10
   icon: {fileID: 21300000, guid: 42814ec78b01646238eee4ac2346c83d, type: 3}
   itemType: 2
+  message: 
+  isReusable: 0
+  displayName: Watermelon
