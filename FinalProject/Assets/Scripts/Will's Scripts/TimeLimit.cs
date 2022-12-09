@@ -21,4 +21,8 @@ public class TimeLimit : MonoBehaviour
 
         timeText.text = timeRemaining.ToString("F2") + "  S";
     }
+
+    public void setTimeRemaining(float newTime) {
+        timeRemaining = newTime;
+    }
 }
