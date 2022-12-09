@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Win : MonoBehaviour
 {
-    public void PlayGame(){
+    public void Retry(){
         SceneManager.LoadScene("Tutorial");
     }
     
-    public void LevelSelect(){
-        SceneManager.LoadScene("LevelSelect");
+    public void MainM(){
+        SceneManager.LoadScene("Menu");
     }
 
     public void QuitGame(){

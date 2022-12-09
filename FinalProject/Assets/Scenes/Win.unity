@@ -651,8 +651,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 1321717306}
+        m_TargetAssemblyTypeName: Win, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -757,28 +757,16 @@ PrefabInstance:
       value: Music
       objectReference: {fileID: 0}
     - target: {fileID: 6910623720510254047, guid: 97acfa69dabd0e94b89f39ac2943e7db, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910623720510254047, guid: 97acfa69dabd0e94b89f39ac2943e7db, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ead19754c26f9c640a82236aa5a50061, type: 3}
-    m_RemovedComponents: []
+      objectReference: {fileID: 8300000, guid: 3e6bde1f5ca1be147aa5b8f97838ebdf, type: 3}
+    m_RemovedComponents:
+    - {fileID: 1221673621719596320, guid: 97acfa69dabd0e94b89f39ac2943e7db, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97acfa69dabd0e94b89f39ac2943e7db, type: 3}
---- !u!1 &884858384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6254957803565913127, guid: 97acfa69dabd0e94b89f39ac2943e7db, type: 3}
-  m_PrefabInstance: {fileID: 884858383}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &884858385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884858384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a16ad0f337d1f4085d5ed28e3ab953, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &984546390
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,9 +851,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1321717306}
+        m_TargetAssemblyTypeName: Win, Assembly-CSharp
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1081,9 +1069,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LevelSelect
+      - m_Target: {fileID: 1321717306}
+        m_TargetAssemblyTypeName: Win, Assembly-CSharp
+        m_MethodName: MainM
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1278,6 +1266,7 @@ GameObject:
   - component: {fileID: 1321717304}
   - component: {fileID: 1321717303}
   - component: {fileID: 1321717302}
+  - component: {fileID: 1321717306}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1369,6 +1358,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1321717306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321717301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6d616a40fb2a1408dc9b3f4821e359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1449663692
 GameObject:
   m_ObjectHideFlags: 0
