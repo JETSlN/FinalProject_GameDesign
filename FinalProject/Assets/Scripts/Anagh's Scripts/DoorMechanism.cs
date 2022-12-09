@@ -38,6 +38,10 @@ public class DoorMechanism : MonoBehaviour
         // }
     }
 
+    public void setLocked(bool newBool) {
+        locked = newBool;
+    }
+
 
     private void OnTriggerStay(Collider other) {
         if (other.gameObject.tag == "Player" && !isOpen) {
@@ -61,6 +65,8 @@ public class DoorMechanism : MonoBehaviour
             TextMeshProUGUI buttonText =  interactButton.GetComponentInChildren(typeof(TextMeshProUGUI)) as TextMeshProUGUI;
             if (isKeypad) {
                 keypad.SetActive(true);
+                keypad.GetComponent<Keypad>().setIsForDoor(true);
+                keypad.GetComponent<Keypad>().setAnswer("517504");
             }
             else {
                 if (locked) {

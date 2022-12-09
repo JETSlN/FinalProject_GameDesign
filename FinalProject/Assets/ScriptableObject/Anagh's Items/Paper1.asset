@@ -17,6 +17,6 @@ MonoBehaviour:
   value: 0
   icon: {fileID: 21300000, guid: a5ff776d9c50e724598dde5a5c4d6210, type: 3}
   itemType: 3
-  message: The server room has a fuse box
+  message: The manager controls everything
   isReusable: 1
   displayName: Paper

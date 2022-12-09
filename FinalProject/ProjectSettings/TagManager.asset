@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Minecart
   - InteractButton
+  - ObjectivesButton
+  - Light
   layers:
   - Default
   - TransparentFX
