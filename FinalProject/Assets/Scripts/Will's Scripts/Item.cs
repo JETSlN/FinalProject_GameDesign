@@ -12,6 +12,8 @@ public class Item : ScriptableObject
 
     public bool isReusable;
 
+    public string displayName;
+
     public enum ItemType
     {
         HP,

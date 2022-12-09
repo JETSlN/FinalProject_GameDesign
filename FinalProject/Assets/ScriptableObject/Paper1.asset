@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1915a2e347be74b0e9d402d895957528, type: 3}
-  m_Name: Paper
+  m_Name: Paper1
   m_EditorClassIdentifier: 
   id: 2
-  itemName: Scrap of Paper
+  itemName: Paper1
   value: 0
   icon: {fileID: 21300000, guid: a5ff776d9c50e724598dde5a5c4d6210, type: 3}
   itemType: 3
   message: Test message
   isReusable: 1
+  displayName: Paper
