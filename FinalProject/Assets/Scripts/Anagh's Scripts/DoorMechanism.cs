@@ -36,6 +36,9 @@ public class DoorMechanism : MonoBehaviour
         // } else {
         //     return false;
         // }
+
+        this.GetComponent<AudioSource>().Play();
+
     }
 
     public void setLocked(bool newBool) {

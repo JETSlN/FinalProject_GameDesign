@@ -85,8 +85,26 @@ public class Keypad : MonoBehaviour
                 p14.Play();
                 p15.Play();
 
-                DialogController.instance.DisplayMessage("Mission Complete. Find a way to escape the office.");
+                p1.GetComponent<AudioSource>().Play();
+                p2.GetComponent<AudioSource>().Play();
+                p3.GetComponent<AudioSource>().Play();
+                p4.GetComponent<AudioSource>().Play();
+                p5.GetComponent<AudioSource>().Play();
+                p6.GetComponent<AudioSource>().Play();
+                p7.GetComponent<AudioSource>().Play();
+                p8.GetComponent<AudioSource>().Play();
+                p9.GetComponent<AudioSource>().Play();
+                p10.GetComponent<AudioSource>().Play();
+                p11.GetComponent<AudioSource>().Play();
+                p12.GetComponent<AudioSource>().Play();
+                p13.GetComponent<AudioSource>().Play();
+                p14.GetComponent<AudioSource>().Play();
+                p15.GetComponent<AudioSource>().Play();
+
                 
+
+                DialogController.instance.DisplayMessage("Mission Complete. Find a way to escape the office.");
+
                 // Unlock emergency exit
                 emergencyDoor.GetComponent<DoorMechanism>().setLocked(false);
             }

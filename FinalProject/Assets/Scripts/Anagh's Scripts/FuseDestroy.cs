@@ -25,6 +25,10 @@ public class FuseDestroy : MonoBehaviour
     
     public GameObject frame;
 
+    public AudioClip secondBgm;
+
+    public AudioSource bgmSource;
+
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
             var interactButton = GameObject.FindGameObjectWithTag("InteractButton").GetComponent<Button>();
@@ -60,6 +64,9 @@ public class FuseDestroy : MonoBehaviour
         
 
         DialogController.instance.DisplayMessage("The alarm has been triggered as well. Better be quick.");
+        this.GetComponent<AudioSource>().Play();
+
+        bgmSource.GetComponent<AudioSource>().clip = secondBgm;
         
 
 
