@@ -8,11 +8,11 @@ public class MusicManager : MonoBehaviour
     {
         if (FindObjectsOfType<MusicManager>().Length > 1)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
     }
 }
