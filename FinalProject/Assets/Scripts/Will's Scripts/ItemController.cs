@@ -45,6 +45,8 @@ public class ItemController : MonoBehaviour
 
         }
 
-        RemoveItem();
+        if (!item.isReusable) {
+            RemoveItem();
+        }
     }
 }

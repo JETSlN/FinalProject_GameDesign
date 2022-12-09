@@ -17,4 +17,5 @@ MonoBehaviour:
   value: 0
   icon: {fileID: 21300000, guid: a5ff776d9c50e724598dde5a5c4d6210, type: 3}
   itemType: 3
-  message: Test messagee
+  message: Test message
+  isReusable: 1

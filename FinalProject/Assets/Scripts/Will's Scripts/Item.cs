@@ -10,6 +10,8 @@ public class Item : ScriptableObject
     public ItemType itemType;
     public string message;
 
+    public bool isReusable;
+
     public enum ItemType
     {
         HP,
