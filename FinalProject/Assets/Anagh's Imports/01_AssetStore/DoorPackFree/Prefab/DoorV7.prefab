@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 6518997691028768924}
   - component: {fileID: 6518997691035969404}
   - component: {fileID: 1578854017568427139}
+  - component: {fileID: 1141045320601467674}
   m_Layer: 0
   m_Name: DoorV7
   m_TagString: Untagged
@@ -165,6 +166,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6736559, y: 2.4348977, z: 1}
   m_Center: {x: -0.16418068, y: 0.71744746, z: -0.00000008905858}
+--- !u!114 &1141045320601467674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6518997691028673724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcc0645b5a6e9c45ae4a2396c4a51e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  locked: 0
+  interactButton: {fileID: 0}
 --- !u!1 &8080936607717989046
 GameObject:
   m_ObjectHideFlags: 0

@@ -85,6 +85,10 @@ public class InventoryManager : MonoBehaviour
         capacity = Items.Count;
     }
 
+    public bool HasItem(Item item) {
+        return Items.Contains(item);
+    }
+
     public void SetInventoryItems()
     {
         InventoryItems = ItemContent.GetComponentsInChildren<ItemController>();

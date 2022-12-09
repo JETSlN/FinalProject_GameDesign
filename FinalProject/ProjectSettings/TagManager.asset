@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Minecart
+  - InteractButton
   layers:
   - Default
   - TransparentFX
