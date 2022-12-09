@@ -4083,6 +4083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign_Slight_Right
       objectReference: {fileID: 0}
+    - target: {fileID: 1912313319382058, guid: 1d55ded536a3cc24ab42193b1d91d557, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4969504617408266, guid: 1d55ded536a3cc24ab42193b1d91d557, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -7928,6 +7932,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2067854597}
     m_Modifications:
+    - target: {fileID: 1551287554573714, guid: e567d38d825d8904c950e8596e642b77, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1671872459643188, guid: e567d38d825d8904c950e8596e642b77, type: 3}
       propertyPath: m_Name
       value: Sign_Sharp_Right
@@ -11441,6 +11449,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1635528282}
     m_Modifications:
+    - target: {fileID: 1106508786342702, guid: 5f3aaf835ed6c4946a48821bb448693a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1529071198939854, guid: 5f3aaf835ed6c4946a48821bb448693a, type: 3}
       propertyPath: m_Name
       value: Sign_Slight_Left
