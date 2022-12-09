@@ -14,6 +14,10 @@ public class Boom : MonoBehaviour
     public char direction;
     public PlayerMovement player; 
     public PlayerHealth health;
+    public AudioSource audioSource;
+    public AudioClip explosionz;
+
+
     private void OnTriggerEnter(Collider other) {
         
         if (other.gameObject.tag == "Player") {
@@ -28,6 +32,7 @@ public class Boom : MonoBehaviour
     }
     public void baboom(){
         explosion.Play();
+        GetComponent<AudioSource>().PlayOneShot(explosionz);
         Tween.Position (transform, transform.position, new Vector3 (transform.position[0]+x,transform.position[1]+y,transform.position[2]+z), 0.1f, 0);
     }
 }

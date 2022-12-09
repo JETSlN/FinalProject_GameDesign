@@ -8,6 +8,15 @@ using UnityEngine.SceneManagement; //to remove later
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public AudioSource audioSource;
+    public AudioClip Ajump;
+    public AudioClip RunningTime;
+    public AudioClip SlidingTime;
+
+
+    
+
     public Transform carty;
     public StayCart ymovement;
     public bool cart = false;
@@ -148,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
         // Check run boolean with if else statement
         if (runButtonPressed && fixedJoystick.Vertical > 0.5 && stamina > 0 && !slidePressed) {
             if (isLeftWall && !isGrounded) {
+                
                 speed = runSpeed;
                 staminaTimer = waitTime;
                 stamina -= 20f * Time.deltaTime / staminaItem;
@@ -169,6 +179,8 @@ public class PlayerMovement : MonoBehaviour
                 isWallRunning = true;
                 canJump = true;
             } else if (isRightWall && !isGrounded) {
+     
+
                 speed = runSpeed;
                 staminaTimer = waitTime;
                 stamina -= 20f * Time.deltaTime / staminaItem;
@@ -258,12 +270,16 @@ public class PlayerMovement : MonoBehaviour
         if (canJump) {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             canJump = false;
+            GetComponent<AudioSource>().PlayOneShot(Ajump);
+
         }
     }
 
     public void RunHeld() {
         if (stamina > 5f) {
             // Only starts if stamina > 5
+            GetComponent<AudioSource>().PlayOneShot(RunningTime);
+
             runButtonPressed = true;
         }
     }
@@ -277,6 +293,8 @@ public class PlayerMovement : MonoBehaviour
             slidePressed = true;
             controller.height = controllerHeight * 2/5;
             groundDistance = 1f;
+            GetComponent<AudioSource>().PlayOneShot(SlidingTime);
+
             //controller.center = new Vector3(0, controller.center.y-groundCheckYPos, 0);
             //groundCheck.localPosition = new Vector3(0,0,0);
         }

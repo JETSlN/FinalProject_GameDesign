@@ -9,7 +9,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     float currentHealth;
     public HealthBar bar;
-
+    public AudioSource audioSource;
+    public AudioClip hurt;
     void Awake()
     {
         Instance = this;
@@ -27,6 +28,8 @@ public class PlayerHealth : MonoBehaviour
         // the on trigger enter function)
         currentHealth -= 1;
         Debug.Log("damage");
+        GetComponent<AudioSource>().PlayOneShot(hurt);
+
         // test because I accidentally stacked some spikes
     }
 
