@@ -17,22 +17,22 @@ public class LevelMenu : MonoBehaviour
 
     public void PlayLevel2(){
         SceneManager.MoveGameObjectToScene(GameObject.Find("Music"), SceneManager.GetActiveScene());
-        SceneManager.LoadScene("Level__");
+        SceneManager.LoadScene("Level 2");
     }
     
     public void PlayLevel3(){
         SceneManager.MoveGameObjectToScene(GameObject.Find("Music"), SceneManager.GetActiveScene());
-        SceneManager.LoadScene("0");
+        SceneManager.LoadScene("Level 3");
     }
     
     public void PlayLevel4(){
         SceneManager.MoveGameObjectToScene(GameObject.Find("Music"), SceneManager.GetActiveScene());
-        SceneManager.LoadScene("Level X");
+        SceneManager.LoadScene("Level 4");
     }
 
     public void PlayLevel5(){
         SceneManager.MoveGameObjectToScene(GameObject.Find("Music"), SceneManager.GetActiveScene());
-        SceneManager.LoadScene("Office2");
+        SceneManager.LoadScene("Level 5");
     }
     public void Back(){
         SceneManager.LoadScene("Menu");
