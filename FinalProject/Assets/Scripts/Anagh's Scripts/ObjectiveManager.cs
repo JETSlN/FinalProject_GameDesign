@@ -4,15 +4,49 @@ using UnityEngine;
 
 public class ObjectiveManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public int currentObjectIndex;
+    public int currentStoryIndex;
+
+    public string[] lines;
+    public string[] storyline;
+
+    public string[] objectives;
+
+
+
+    private void Start() {
+        currentObjectIndex = 0;
+        objectives = new string[] {
+        "Look for clues around the office. | There may be scraps of paper lying around. | Some of the office doors are unlocked.",
+        "Find key to unlock server room operator's office",
+        "Reach the server room",
+        "Find a way to destroy the servers",
+    };
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    private void incrementStoryIndex() {
+        currentStoryIndex += 1;
+    }
+
+    private void incrementObjectiveIndex() {
+        currentObjectIndex += 1;
+    }
+
+    public void ShowCurrentObjective() {
+        string currentObjective = objectives[currentObjectIndex];
+        lines = currentObjective.Split('|');
+
+        StartCoroutine(Wait(6f, lines));
+       
+    }
+
+    IEnumerator Wait(float time, string[] lines) {
+        
+        foreach(string line in lines) {
+            Debug.Log(line);
+            DialogController.instance.DisplayMessage(line);
+            yield return new WaitForSeconds(time);
+        }
         
     }
 }

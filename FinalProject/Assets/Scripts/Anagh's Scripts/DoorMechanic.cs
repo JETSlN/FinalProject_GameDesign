@@ -9,7 +9,7 @@ public class DoorMechanic : MonoBehaviour
     public GameObject navMeshObstacle;
     private LayerMask ItemMask;
 
-    // public bool locked = false;
+    public bool locked = false;
     public bool isOpen = false;
 
     // Start is called before the first frame update
@@ -19,7 +19,9 @@ public class DoorMechanic : MonoBehaviour
     }
 
     public void Open() {
-        animator.SetBool("hasBeenOpened", true);
+        if (locked) {
+            animator.SetBool("hasBeenOpened", true);
+        }
         isOpen = true;
         navMeshObstacle.SetActive(false);
         

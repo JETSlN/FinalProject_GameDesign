@@ -33,7 +33,7 @@ public class DialogController : MonoBehaviour
     public void DisplayMessage(string message) {
         canvas.SetActive(true);
         SetText(message);
-        StartCoroutine(WaitAndClose(2f));
+        StartCoroutine(WaitAndClose(5f));
     }
 
     IEnumerator WaitAndClose(float time) {

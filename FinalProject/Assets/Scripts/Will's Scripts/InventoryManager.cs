@@ -14,6 +14,8 @@ public class InventoryManager : MonoBehaviour
     public float capacity;
     public float maxCapacity;
 
+    public int currItemIndex = -1; 
+
     public ItemController[] InventoryItems;
 
     private void Awake()
@@ -24,6 +26,7 @@ public class InventoryManager : MonoBehaviour
     public void Add(Item item)
     {
         Items.Add(item);
+        currItemIndex += 1;
     }
 
     public void Remove(Item item)
@@ -33,20 +36,48 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItems()
     {
+        // Print items before
+        foreach(Transform item in ItemContent) {
+            Debug.Log(item);
+        }
+
+
         //clean items
         foreach (Transform item in ItemContent)
         {
+            // Delete old ItemSlot clones from inventory
             Destroy(item.gameObject);
         }
-        foreach (var item in Items){
-            GameObject obj = Instantiate(InventoryItem, ItemContent);
-            //var itemName = obj.transform.Find("Item/ItemName").GetComponent<Text>();
-            var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+        // Now ItemContent is cleaned
+        // Debug.Log(ItemContent);
+        // foreach(Transform item in ItemContent) {
+        //     Debug.Log(item);
+        // }
 
-            //itemName.text = item.itemName;
+
+        // Print items
+        Debug.Log(Items);
+
+
+        foreach (var item in Items){
+            // Create new game objects with InventoryItem (ItemSlot) as the prefab
+            //  ItemContent as the parent. Where is the item though? 
+            GameObject obj = Instantiate(InventoryItem, ItemContent);
+
+            // obj.ItemController.Item = item;
+            obj.GetComponent<ItemController>().item = item;
+
+
+
+            //var itemName = obj.transform.Find("Item/ItemName").GetComponent<Text>();
+
+            // Set icons for inventory
+            var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
             itemIcon.sprite = item.icon;
+            //itemName.text = item.itemName;
         }
-        SetInventoryItems();
+
+        // SetInventoryItems();
     }
 
     void Update()
