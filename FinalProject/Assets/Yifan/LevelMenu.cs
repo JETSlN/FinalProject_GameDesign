@@ -35,7 +35,6 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("Office2");
     }
     public void Back(){
-        SceneManager.MoveGameObjectToScene(GameObject.Find("Music"), SceneManager.GetActiveScene());
         SceneManager.LoadScene("Menu");
     }
 }
