@@ -6,13 +6,13 @@ public class Tutorial : MonoBehaviour
 {
     public GameObject message;
 
-    void onTriggerEnter(Collider other) {
+    void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
             message.SetActive(true);
         }
     }
 
-    void onTriggerExit(Collider other) {
+    void OnTriggerExit(Collider other) {
         if (other.tag == "Player") {
             message.SetActive(false);
         }
