@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class LevelMenu : MonoBehaviour
 {
     public void PlayLevelTutotial(){
+        SceneManager.MoveGameObjectToScene(GameObject.Find("Music"), SceneManager.GetActiveScene());
         SceneManager.LoadScene("Tutorial");
     }
     
     public void PlayLevel1(){
+        SceneManager.MoveGameObjectToScene(GameObject.Find("Music"), SceneManager.GetActiveScene());
         SceneManager.LoadScene("Level 1");
     }
 
