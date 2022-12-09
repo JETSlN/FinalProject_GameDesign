@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.108872175, y: 0.8030789, z: 1.9387606}
-  m_Center: {x: 0.017979093, y: -0.39169115, z: 0.9756203}
+  m_Size: {x: 0.247253, y: 0.8030789, z: 1.9387609}
+  m_Center: {x: 0.016970193, y: -0.39169115, z: 0.9756203}
 --- !u!1 &6518997691028673724
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6518997691028768924}
   - component: {fileID: 6518997691035969404}
+  - component: {fileID: 1578854017568427139}
   m_Layer: 0
   m_Name: DoorV7
   m_TagString: Untagged
@@ -151,6 +152,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1578854017568427139
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6518997691028673724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6736559, y: 2.4348977, z: 1}
+  m_Center: {x: -0.16418068, y: 0.71744746, z: -0.00000008905858}
 --- !u!1 &8080936607717989046
 GameObject:
   m_ObjectHideFlags: 0

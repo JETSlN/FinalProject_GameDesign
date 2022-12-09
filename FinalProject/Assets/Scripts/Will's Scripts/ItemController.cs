@@ -21,6 +21,12 @@ public class ItemController : MonoBehaviour
 
     public void UseItem()
     {
+        if (!item) {
+            Debug.Log("Item does not exist");
+        }
+        else {
+            Debug.Log("Using item...");
+        }
         switch(item.itemType)
         {
             case Item.ItemType.HP:

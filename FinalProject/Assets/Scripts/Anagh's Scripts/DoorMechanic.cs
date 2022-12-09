@@ -19,7 +19,9 @@ public class DoorMechanic : MonoBehaviour
     }
 
     public void Open() {
-        animator.SetBool("hasBeenOpened", true);
+        if (locked) {
+            animator.SetBool("hasBeenOpened", true);
+        }
         isOpen = true;
         navMeshObstacle.SetActive(false);
         

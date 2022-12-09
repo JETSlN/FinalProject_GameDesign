@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 2
   itemName: Scrap of Paper
   value: 0
-  icon: {fileID: 21300000, guid: bdb1c7b7706c2314e955cd2d64051f47, type: 3}
+  icon: {fileID: 21300000, guid: a5ff776d9c50e724598dde5a5c4d6210, type: 3}
   itemType: 3
-  message: 
+  message: Test messagee

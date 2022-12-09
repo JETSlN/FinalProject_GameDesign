@@ -224,5 +224,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  playerHP: {fileID: 1331670248282379474, guid: b3ed2ad7884f14e898facfb7bc8144d2, type: 3}
-  playerStamina: {fileID: 1331670248282379477, guid: b3ed2ad7884f14e898facfb7bc8144d2, type: 3}
